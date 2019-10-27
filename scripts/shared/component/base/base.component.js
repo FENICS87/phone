@@ -16,6 +16,7 @@ export class BaseComponent {
 
     on(eventName, selector, cb) {
         this._element.addEventListener(eventName, (e) => {
+            e.preventDefault();
             const el = e.target.closest(selector);
             if (!el) {
                 return;
